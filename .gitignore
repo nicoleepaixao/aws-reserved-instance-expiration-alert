@@ -1,0 +1,33 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+env/
+venv/
+.venv/
+
+# Lambda builds
+*.zip
+package/
+dist/
+
+# SAM / CDK / Terraform
+.aws-sam/
+cdk.out/
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+# Credentials
+.env
+.aws/
+
+# Editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
