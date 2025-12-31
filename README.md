@@ -15,6 +15,10 @@
 
 ---
 
+<p align="center">
+  <img src="img/aws-reserved-instance-expiration-alert.png" alt="reserved instance alert Architecture" width="1200">
+</p>
+
 ## **Overview**
 
 This project implements a fully serverless, low-cost FinOps automation that monitors AWS Reserved Instances (EC2 and RDS) and sends alerts when they are approaching their expiration date. The system runs daily via AWS Lambda + EventBridge + SNS, evaluating RI expiration thresholds and notifying your team to prevent unexpected cost increases.
@@ -55,41 +59,9 @@ When Reserved Instances expire without monitoring, workloads instantly revert to
 
 ## **Architecture**
 
-<div align="center">
-
-```text
-                            ┌───────────────────────────┐
-                            │    EventBridge Schedule    │
-                            │   (Runs daily: cron job)   │
-                            └───────────────┬────────────┘
-                                            │
-                                            ▼
-                            ┌───────────────────────────┐
-                            │          Lambda            │
-                            │  reserved-instance-alert   │
-                            │ --------------------------- │
-                            │ - Fetch EC2 RI data         │
-                            │ - Fetch RDS RI data         │
-                            │ - Compute days remaining     │
-                            │ - Apply thresholds           │
-                            │ - Publish alert to SNS       │
-                            └───────────────┬────────────┘
-                                            │
-                                            ▼
-                            ┌───────────────────────────┐
-                            │          SNS Topic         │
-                            │ reserved-instance-alert    │
-                            └───────────────┬────────────┘
-                                            │
-                   ┌────────────────────────┴────────────────────────┐
-                   │                                                 │
-                   ▼                                                 ▼
-         ┌───────────────────┐                             ┌───────────────────┐
-         │ Email Subscriber  │                             │ Slack/Webhook     │
-         └───────────────────┘                             └───────────────────┘
-```
-
-</div>
+<p align="center">
+  <img src="img/aws-reserved-instance-expiration-alert.png" alt="reserved instance alert Architecture" width="800">
+</p>
 
 ---
 
