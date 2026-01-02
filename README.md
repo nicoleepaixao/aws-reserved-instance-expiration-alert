@@ -1,5 +1,3 @@
-# AWS Reserved Instance Expiration Alert
-
 <div align="center">
   
 ![AWS Lambda](https://img.icons8.com/color/96/amazon-web-services.png)
