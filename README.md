@@ -4,62 +4,28 @@
 
 ## Automated Reserved Instance (EC2/RDS) Expiration Alerts
 
-**Updated: December 2, 2025**
+**Updated: January 14, 2026**
 
 [![Follow @nicoleepaixao](https://img.shields.io/github/followers/nicoleepaixao?label=Follow&style=social)](https://github.com/nicoleepaixao)
 [![Star this repo](https://img.shields.io/github/stars/nicoleepaixao/aws-ri-expiration-alert?style=social)](https://github.com/nicoleepaixao/aws-ri-expiration-alert)
+[![Medium Article](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://nicoleepaixao.medium.com/)
+
+<p align="center">
+  <a href="README-PT.md">🇧🇷</a>
+  <a href="README.md">🇺🇸</a>
+</p>
 
 </div>
 
 ---
 
 <p align="center">
-  <img src="img/aws-reserved-instance-expiration-alert.png" alt="reserved instance alert Architecture" width="1200">
+  <img src="img/aws-reserved-instance-expiration-alert.png" alt="reserved instance alert Architecture" width="2000">
 </p>
 
 ## **Overview**
 
 This project implements a fully serverless, low-cost FinOps automation that monitors AWS Reserved Instances (EC2 and RDS) and sends alerts when they are approaching their expiration date. The system runs daily via AWS Lambda + EventBridge + SNS, evaluating RI expiration thresholds and notifying your team to prevent unexpected cost increases.
-
----
-
-## **Important Information**
-
-### **What This Project Does**
-
-| **Aspect** | **Details** |
-|------------|-------------|
-| **Services Monitored** | EC2 Reserved Instances, RDS Reserved Instances |
-| **Alert Thresholds** | Configurable (default: 60, 30, 7 days) |
-| **Execution Model** | Daily schedule via EventBridge |
-| **Notification Channel** | SNS topic (multiple subscribers supported) |
-| **Runtime** | AWS Lambda (Python 3.12) |
-| **Cost** | Eligible for AWS Free Tier (near-zero cost) |
-
-### **Why This Matters**
-
-When Reserved Instances expire without monitoring, workloads instantly revert to On-Demand pricing, causing:
-
-- **Sudden cost spikes** that impact monthly AWS bills
-- **Loss of long-term reservation benefits** (up to 72% discount)
-- **Budget forecast inaccuracies** across FinOps planning
-- **Missed renewal opportunities** during optimal pricing windows
-
-### **Solution Benefits**
-
-- **Proactive Alerts**: Receive notifications 60, 30, and 7 days before expiration
-- **Multi-Service**: Monitors both EC2 and RDS Reserved Instances
-- **Serverless**: Fully automated with zero infrastructure management
-- **Cost-Effective**: Runs on AWS Free Tier eligible services
-- **Extensible**: Easy to add Savings Plans, multi-account support
-
----
-
-## **Architecture**
-
-<p align="center">
-  <img src="img/aws-reserved-instance-expiration-alert.png" alt="reserved instance alert Architecture" width="800">
-</p>
 
 ---
 
@@ -223,45 +189,6 @@ Action Required: Review and renew these reservations to maintain cost savings.
 
 ---
 
-## **Features**
-
-| **Feature** | **Description** |
-|-------------|-----------------|
-| **Daily Automated Scan** | Scheduled execution via EventBridge |
-| **Threshold-Based Detection** | Configurable alert windows (60, 30, 7 days) |
-| **Multi-Channel Notifications** | SNS supports email, Slack, webhooks, SMS |
-| **Fully Serverless** | Zero infrastructure management |
-| **Cost-Effective** | Runs on AWS Free Tier |
-| **Multi-Service Support** | Monitors EC2 and RDS Reserved Instances |
-| **Easy Extension** | Add Savings Plans or multi-account support |
-
----
-
-## **Use Cases**
-
-This automation is ideal for:
-
-- **FinOps Teams**: Proactive cost management and reservation tracking
-- **Cloud Architects**: Ensuring continuous cost optimization
-- **DevOps Teams**: Preventing unexpected On-Demand cost spikes
-- **Finance Departments**: Accurate budget forecasting and planning
-- **Multi-Account Organizations**: Centralized RI expiration monitoring
-
----
-
-## **Technologies Used**
-
-| **Technology** | **Version** | **Purpose** |
-|----------------|-------------|-------------|
-| AWS Lambda | Python 3.12 | Serverless compute for alert logic |
-| boto3 | Latest | AWS SDK for EC2/RDS API calls |
-| EventBridge | - | Scheduled daily execution |
-| SNS | - | Multi-channel notification delivery |
-| IAM | - | Secure, least-privilege access control |
-| CloudWatch Logs | - | Lambda execution logging |
-
----
-
 ## **Project Structure**
 
 ```text
@@ -283,20 +210,6 @@ For more details about AWS Reserved Instances, cost optimization, and FinOps bes
 - [AWS FinOps Best Practices](https://aws.amazon.com/aws-cost-management/aws-cost-optimization/) - Cost optimization strategies
 - [Boto3 EC2 Documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html) - Python SDK reference
 - [Boto3 RDS Documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html) - RDS API reference
-
----
-
-## **Future Enhancements**
-
-| **Feature** | **Description** | **Status** |
-|-------------|-----------------|------------|
-| Savings Plans Support | Monitor Savings Plans expiration | Planned |
-| Multi-Account Scanning | AWS Organizations integration | Planned |
-| Expiration Dashboard | Visual timeline in QuickSight | In Development |
-| DynamoDB Tracking | Prevent duplicate alerts | Planned |
-| FinOps Integration | Connect to Cloud Custodian, Vantage | Future |
-| Cost Savings Calculator | Estimate impact of expired RIs | Planned |
-| Slack Rich Notifications | Interactive buttons for renewal | Future |
 
 ---
 
@@ -324,6 +237,8 @@ This tool is provided as-is for monitoring and alerting purposes. AWS Reserved I
 
 **Happy optimizing your AWS costs!**
 
-*Document last updated: December 2, 2025*
+*Document Created: December 2, 2025*
+
+Made with ❤️ by [Nicole Paixão](https://github.com/nicoleepaixao)
 
 </div>
